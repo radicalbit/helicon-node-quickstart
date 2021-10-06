@@ -81,8 +81,8 @@ heliconSubscribeClient.subscribe("<streamName>").onData(
 ## How to Run the app
 
 To run the example you need to:
-2. fill the necessary authentication details in `publish.js` or `subscribe.js`.
-3. Run the examples with `npm run start:publish` or `npm run start:subscribe` (you can use `yarn` or `pnpm` too)
+1. fill the necessary authentication details in `publish.js` or `subscribe.js`.
+2. Run the examples with `npm run start:publish` or `npm run start:subscribe` (you can use `yarn` or `pnpm` too)
 
 
 ## Support
