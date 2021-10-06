@@ -3,6 +3,8 @@ This repository contains the files required to run the Helicon Node Quickstart.
 
 Helicon is a simple, scalable, robust, code-free and generic platform to enable and productise the next generation of "online modified", real-time event stream ML/AI models.
 
+A live example can be found [here](https://stackblitz.com/github/radicalbit/helicon-node-quickstart/)
+
 ## Set up the project
 
 Project can be setup with those simple steps:
@@ -80,7 +82,9 @@ heliconSubscribeClient.subscribe("<streamName>").onData(
 ```
 ## How to Run the app
 
-To run the example you need to:
+A live example can be found [here](https://stackblitz.com/github/radicalbit/helicon-node-quickstart/)
+
+If you want to run the app locally, you will need to:
 1. fill the necessary authentication details in `publish.js` or `subscribe.js`.
 2. Run the examples with `npm run start:publish` or `npm run start:subscribe` (you can use `yarn` or `pnpm` too)
 
