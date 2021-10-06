@@ -5,15 +5,84 @@ Helicon is a simple, scalable, robust, code-free and generic platform to enable 
 
 ## Set up the project
 
-This project uses a Helicon library, so you need to properly configure the `settings.xml` file located at `USER_HOME/.m2/`. Please, [contact us](mailto:support@radicalbit.io) to gain access to the library.
-
-After that, you have to run `mvn clean install` to install the project and resolve the dependencies.
+Project can be setup with those simple steps:
+1. locally download the repository
+2. install the necessary dependencies with `npm install` (or any package manager you prefer, like `yarn` or `pnpm`).
 
 ## Sample App
 ### Publish
+
+_publish_ operations can be performed by using the `HeliconWriteClient` class exported by the library.
+
+To initialize a new `HeliconWriteClient` istance, the user is tasked to fill all the required parameters of the constructor such as:
+
+ - The authorization server URL
+ - The address where the GRPC Host is located
+ - The port to which the GRPC Host is binded
+ - The rest of the authentication parameters such as Client Secret, clientId and Tenant
+
+Each of these parameters can be found (pre-filled) in the "Setup" section of a newly created stream.
+
+After a `HeliconWriteClient` has been initialized, the user can send data to the stream thanks to the `write(streamName, payload)` method; An usage example is shown below: 
+
+```javascript
+const { HeliconWriteClient } = require("@radicalbit/helicon-node-sdk");
+
+const authorizationServer = "<authorization-server-url>";
+const grpcHost = "<grpc-host>";
+const grpcPort = 0;
+const clientId = "<client-id>";
+const clientSecret = "<client-secret>";
+const tenant = "<tenant-name>";
+
+const payload = {
+	"name": "record",
+	"temperature": "29"
+};
+
+const heliconWriteClient = new HeliconWriteClient(authorizationServerUrl, grpcHost, grpcPort, clientId, clientSecret, tenant);
+
+heliconWriteClient.write("<streamName>", payload).then(
+	() => console.log("payload published!"),
+	(errorMessage) => console.error(errorMessage)
+);
+```
 ### Subscribe
 
+_subscribe_ operations can be performed by using the `HeliconSubscribeClient` class exported by the library.
+
+To initialize a new `HeliconSubscribeClient` istance, the user is tasked to fill all the required parameters of the constructor such as:
+
+ - The authorization server URL
+ - The address where the GRPC Host is located
+ - The port to which the GRPC Host is binded
+ - The rest of the authentication parameters such as Client Secret, clientId and Tenant
+
+Each of these parameters can be found (pre-filled) in the "Setup" section of a newly created stream.
+
+After a `HeliconSubscribeClient` has been initialized, the user can receive the events from the stream thanks to the `subscribe(streamDisplaName)` method; An usage example is shown below: 
+
+```javascript
+const { HeliconSubscribeClient } = require("@radicalbit/helicon-node-sdk");
+
+const authorizationServer = "<authorization-server-url>";
+const grpcHost = "<grpc-host>";
+const grpcPort = 0;
+const clientId = "<client-id>";
+const clientSecret = "<client-secret>";
+const tenant = "<tenant-name>";
+
+const heliconSubscribeClient = new HeliconSubscribeClient(authorizationServerUrl, grpcHost, grpcPort, clientId, clientSecret, tenant);
+
+heliconSubscribeClient.subscribe("<streamName>").onData(
+  (data) => console.log(data)
+);
+```
 ## How to Run the app
+
+To run the example you need to:
+2. fill the necessary authentication details in `publish.js` or `subscribe.js`.
+3. Run the examples with `npm run start:publish` or `npm run start:subscribe` (you can use `yarn` or `pnpm` too)
 
 
 ## Support

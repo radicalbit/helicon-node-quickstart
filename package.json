@@ -1,0 +1,14 @@
+{
+  "name": "helicon-node-quickstart",
+  "version": "1.0.0",
+  "repository": "https://github.com/radicalbit/helicon-node-quickstart.git",
+  "author": "radicalbit",
+  "license": "MIT",
+  "dependencies": {
+    "@radicalbit/helicon-node-sdk": "^1.0.0"
+  },
+  "scripts": {
+    "start:publish": "node src/publish.js",
+    "start:subscribe": "node src/subscribe.js"
+  }
+}
