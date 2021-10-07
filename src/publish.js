@@ -1,6 +1,6 @@
 const { HeliconWriteClient } = require("@radicalbit/helicon-node-sdk");
 
-const authorizationServer = "<authorization-server-url>";
+const authorizationServerUrl = "<authorization-server-url>";
 const grpcHost = "<grpc-host>";
 const grpcPort = 0;
 const clientId = "<client-id>";

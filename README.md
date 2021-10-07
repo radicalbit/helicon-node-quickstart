@@ -30,7 +30,7 @@ After a `HeliconWriteClient` has been initialized, the user can send data to the
 ```javascript
 const { HeliconWriteClient } = require("@radicalbit/helicon-node-sdk");
 
-const authorizationServer = "<authorization-server-url>";
+const authorizationServerUrl = "<authorization-server-url>";
 const grpcHost = "<grpc-host>";
 const grpcPort = 0;
 const clientId = "<client-id>";
@@ -67,7 +67,7 @@ After a `HeliconSubscribeClient` has been initialized, the user can receive the 
 ```javascript
 const { HeliconSubscribeClient } = require("@radicalbit/helicon-node-sdk");
 
-const authorizationServer = "<authorization-server-url>";
+const authorizationServerUrl = "<authorization-server-url>";
 const grpcHost = "<grpc-host>";
 const grpcPort = 0;
 const clientId = "<client-id>";
