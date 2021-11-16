@@ -5,7 +5,7 @@
   "author": "radicalbit",
   "license": "MIT",
   "dependencies": {
-    "@radicalbit/helicon-node-sdk": "^1.0.1"
+    "@radicalbit/helicon-node-sdk": "^3.0.0"
   },
   "scripts": {
     "start:publish": "node src/publish.js",
