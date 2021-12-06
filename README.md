@@ -17,7 +17,6 @@ _publish_ operations can be performed by using the `HeliconWriteClient` class ex
 To initialize a new `HeliconWriteClient` istance, the user is tasked to fill all the required parameters of the constructor such as:
 
  - The authorization server URL
- - The address where the GRPC Host is located
  - The port to which the GRPC Host is binded
  - The rest of the authentication parameters such as Client Secret, clientId and Tenant
 
@@ -29,7 +28,6 @@ After a `HeliconWriteClient` has been initialized, the user can send data to the
 const { HeliconWriteClient } = require("@radicalbit/helicon-node-sdk");
 
 const authorizationServerUrl = "<authorization-server-url>";
-const grpcHost = "<grpc-host>";
 const grpcPort = 0;
 const clientId = "<client-id>";
 const clientSecret = "<client-secret>";
@@ -40,7 +38,7 @@ const payload = {
 	"temperature": "29"
 };
 
-const heliconWriteClient = new HeliconWriteClient(authorizationServerUrl, grpcHost, grpcPort, clientId, clientSecret, tenant);
+const heliconWriteClient = new HeliconWriteClient(authorizationServerUrl, grpcPort, clientId, clientSecret, tenant);
 
 heliconWriteClient.write("<streamName>", payload).then(
 	() => console.log("payload published!"),
@@ -51,10 +49,9 @@ heliconWriteClient.write("<streamName>", payload).then(
 
 _subscribe_ operations can be performed by using the `HeliconSubscribeClient` class exported by the library.
 
-To initialize a new `HeliconSubscribeClient` istance, the user is tasked to fill all the required parameters of the constructor such as:
+To initialize a new `HeliconSubscribeClient` instance, the user is tasked to fill all the required parameters of the constructor such as:
 
  - The authorization server URL
- - The address where the GRPC Host is located
  - The port to which the GRPC Host is binded
  - The rest of the authentication parameters such as Client Secret, clientId and Tenant
 
@@ -66,13 +63,12 @@ After a `HeliconSubscribeClient` has been initialized, the user can receive the 
 const { HeliconSubscribeClient } = require("@radicalbit/helicon-node-sdk");
 
 const authorizationServerUrl = "<authorization-server-url>";
-const grpcHost = "<grpc-host>";
 const grpcPort = 0;
 const clientId = "<client-id>";
 const clientSecret = "<client-secret>";
 const tenant = "<tenant-name>";
 
-const heliconSubscribeClient = new HeliconSubscribeClient(authorizationServerUrl, grpcHost, grpcPort, clientId, clientSecret, tenant);
+const heliconSubscribeClient = new HeliconSubscribeClient(authorizationServerUrl, grpcPort, clientId, clientSecret, tenant);
 
 heliconSubscribeClient.subscribe("<streamName>").onData(
   (data) => console.log(data)
