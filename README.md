@@ -81,6 +81,14 @@ If you want to run the app locally, you will need to:
 1. fill the necessary authentication details in `publish.js` or `subscribe.js`.
 2. Run the examples with `npm run start:publish` or `npm run start:subscribe` (you can use `yarn` or `pnpm` too)
 
+## Change the API version
+
+The main branch is always updated with the latest version of Helicon API.
+
+If you need to use an old version of the Helicon's API, you can switch between the project version using `git checkout tag_version`.
+
+You can refer to Helicon documentation for looking more in the depth over the version's features.
+
 
 ## Support
 We're always happy to help with any other questions you might have! [Send us an email](mailto:support@radicalbit.io).
