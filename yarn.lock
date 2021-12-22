@@ -35,10 +35,10 @@
     semver "^7.3.4"
     tar "^6.1.0"
 
-"@radicalbit/helicon-node-sdk@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@radicalbit/helicon-node-sdk/-/helicon-node-sdk-1.0.1.tgz#a8ffc39b8dc841593007be57a912a988392229ed"
-  integrity sha512-qETcKzf6RIgnAUMFoQcKZoqGjuwq951uqkltSsG3xbRgCm8QMPZFV+4Db1aYhErvZURovDPXC94RQXGc4kyHgQ==
+"@radicalbit/helicon-node-sdk@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@radicalbit/helicon-node-sdk/-/helicon-node-sdk-3.0.0.tgz#b05ccd494d21103969cd5caa53deca7ffef01ccd"
+  integrity sha512-UBWXACe7o7ah8N5l7dIsCj2SmMJwI3AbkA7nTcRqnicPcmV5c+8Jov3MFU8MqS3LUvE+6QvHQaCuOBeVOKbBfQ==
   dependencies:
     "@grpc/grpc-js" "^1.3.7"
     axios "^0.22.0"
