@@ -27,23 +27,18 @@ After a `HeliconWriteClient` has been initialized, the user can send data to the
 ```javascript
 const { HeliconWriteClient } = require("@radicalbit/helicon-node-sdk");
 
-const grpcHost = "<grpc-host>";
-const grpcPort = 0;
+const host = "<host>";
+const port = 443;
 const clientId = "<client-id>";
 const clientSecret = "<client-secret>";
 const tenant = "<tenant-name>";
 
 const payload = {
 	"name": "record",
-	"temperature": "29"
+	"temperature": 29
 };
 
-const heliconWriteClient = new HeliconWriteClient(grpcHost, grpcPort, clientId, clientSecret, tenant);
-
-heliconWriteClient.write("<streamName>", payload).then(
-	() => console.log("payload published!"),
-	(errorMessage) => console.error(errorMessage)
-);
+const heliconWriteClient = new HeliconWriteClient(host, clientId, clientSecret, tenant, port);
 ```
 ### Subscribe
 
@@ -62,13 +57,13 @@ After a `HeliconSubscribeClient` has been initialized, the user can receive the 
 ```javascript
 const { HeliconSubscribeClient } = require("@radicalbit/helicon-node-sdk");
 
-const grpcHost = "<grpc-host>";
-const grpcPort = 0;
+const host = "<host>";
+const port = 443;
 const clientId = "<client-id>";
 const clientSecret = "<client-secret>";
 const tenant = "<tenant-name>";
 
-const heliconSubscribeClient = new HeliconSubscribeClient(grpcHost, grpcPort, clientId, clientSecret, tenant);
+const heliconSubscribeClient = new HeliconSubscribeClient(host, clientId, clientSecret, tenant, port);
 
 heliconSubscribeClient.subscribe("<streamName>").onData(
   (data) => console.log(data)

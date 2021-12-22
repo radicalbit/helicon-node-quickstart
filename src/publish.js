@@ -5,14 +5,13 @@ const port = 443;
 const clientId = "<client-id>";
 const clientSecret = "<client-secret>";
 const tenant = "<tenant-name>";
-const protocol = "<http-protocol>";
 
 const payload = {
 	"name": "record",
 	"temperature": 29
 };
 
-const heliconWriteClient = new HeliconWriteClient(host, clientId, clientSecret, tenant, port, protocol);
+const heliconWriteClient = new HeliconWriteClient(host, clientId, clientSecret, tenant, port);
 
 heliconWriteClient.write("<streamName>", payload).then(
 	() => console.log("payload published!"),
